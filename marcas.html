@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DEAL TRADING — Marcas parceiras. Conheça os fabricantes internacionais que distribuímos no Brasil.">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Marcas | DEAL TRADING</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d4af37'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='system-ui' font-size='14' font-weight='700' fill='%230d0d0d'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="src/assets/css/styles.css">
+  <style>
+    /* ============================================================
+       MARCAS PAGE — estilos exclusivos
+    ============================================================ */
+
+    /* ----- Hero da página ----- */
+    .page-hero {
+      background: var(--ink);
+      padding: 3rem 0 2.75rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 65% 85% at 90% 55%, rgba(212,175,55,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .page-hero .container { position: relative; z-index: 1; }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.1rem;
+    }
+
+    .breadcrumb a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb i { font-size: 0.6rem; }
+
+    .page-hero__eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.5rem;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.6rem;
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 50ch;
+      margin: 0;
+    }
+
+    /* ----- Barra de filtros ----- */
+    .filters-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0;
+      position: sticky;
+      top: var(--header-h);
+      z-index: 50;
+    }
+
+    .filters-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.4rem 0.95rem;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 100px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.22s var(--ease);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--gold-dark);
+      color: var(--gold-dark);
+    }
+
+    .filter-btn.is-active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+
+    /* ----- Grid de marcas ----- */
+    .marcas-main {
+      padding: clamp(2.5rem, 6vw, 4rem) 0;
+      min-height: 50vh;
+    }
+
+    .marcas-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .marcas-count strong { color: var(--ink); }
+
+    .marcas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.1rem;
+    }
+
+    /* ----- Card de marca ----- */
+    .brand-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      position: relative;
+    }
+
+    .brand-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .brand-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+      border-color: rgba(212,175,55,0.3);
+    }
+
+    .brand-card:hover::after { transform: scaleX(1); }
+
+    .brand-card__logo-wrap {
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-card__logo-wrap img {
+      max-height: 72px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .brand-card__logo-wrap.logo-placeholder {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .brand-card__body {
+      padding: 1rem 1rem 0.85rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .brand-card__cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .brand-card__name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .brand-card__footer {
+      padding: 0.65rem 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-card__cta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .brand-card__catalog-icon {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .brand-card__catalog-icon.has-catalog {
+      color: var(--gold-dark);
+    }
+
+    /* ----- Estado vazio ----- */
+    .brands-empty {
+      display: none;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .brands-empty i {
+      font-size: 2.5rem;
+      color: var(--border);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    /* ----- Skeleton ----- */
+    .skeleton-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .sk {
+      background: linear-gradient(90deg, var(--surface-alt) 25%, #ebe9e3 50%, var(--surface-alt) 75%);
+      background-size: 200% 100%;
+      animation: sk-shimmer 1.4s infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes sk-shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .sk-logo-area { height: 110px; border-bottom: 1px solid var(--border); }
+    .sk-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .sk-line { height: 11px; }
+    .sk-title { height: 16px; width: 65%; }
+
+    /* ============================================================
+       MODAL
+    ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(13,13,13,0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.26s var(--ease);
+    }
+
+    .modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--surface);
+      border-radius: var(--radius);
+      width: min(520px, 100%);
+      max-height: calc(100dvh - 2rem);
+      overflow-y: auto;
+      box-shadow: 0 32px 80px rgba(13,13,13,0.28);
+      transform: translateY(18px) scale(0.97);
+      transition: transform 0.3s var(--ease);
+    }
+
+    .modal-overlay.is-open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    /* Header do modal */
+    .modal__head {
+      background: var(--ink);
+      padding: 1.4rem 1.4rem 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .modal__logo {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .modal__logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      padding: 0.4rem;
+    }
+
+    .modal__logo.logo-placeholder {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .modal__titles { flex: 1; }
+
+    .modal__cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.2rem;
+    }
+
+    .modal__name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      border: none;
+      border-radius: 7px;
+      color: rgba(255,255,255,0.65);
+      cursor: pointer;
+      font-size: 0.82rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .modal__close:hover {
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+    }
+
+    /* Body do modal */
+    .modal__body { padding: 1.4rem; }
+
+    .modal__desc {
+      font-size: 0.975rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin: 0 0 1.25rem;
+    }
+
+    /* Meta (segmento + site) */
+    .modal__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding: 0.9rem 1rem;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.25rem;
+    }
+
+    .modal__meta-item { display: flex; flex-direction: column; gap: 0.12rem; }
+
+    .modal__meta-label {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .modal__meta-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .modal__meta-value a {
+      color: var(--gold-dark);
+      text-decoration: none;
+    }
+
+    .modal__meta-value a:hover { text-decoration: underline; }
+
+    /* Área de catálogo */
+    .modal__catalog-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+
+    .modal__no-catalog {
+      padding: 0.8rem 1rem;
+      background: var(--surface-alt);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .modal__no-catalog a {
+      color: var(--gold-dark);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#marcas-content">Ir para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html" aria-label="DEAL TRADING — início">
+        <img class="logo__mark" src="src/imgs/logo.png" alt="DEAL TRADING" height="52">
+        <span class="logo__text">
+          <span class="logo__name">Deal Trading</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html#quem-somos">Quem somos</a>
+        <a href="index.html#valores">Valores</a>
+        <a href="marcas.html" aria-current="page">Marcas</a>
+        <a href="index.html#contato" class="btn btn--primary">Contato</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="menu-mobile" class="nav-mobile" aria-label="Mobile">
+      <a href="index.html#quem-somos">Quem somos</a>
+      <a href="index.html#valores">Valores</a>
+      <a href="marcas.html">Marcas</a>
+      <a href="index.html#contato" class="btn btn--primary btn--block">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO DA PÁGINA -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Início</a>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        <span>Marcas</span>
+      </nav>
+      <p class="page-hero__eyebrow">Portfólio</p>
+      <h1>Nossas Marcas</h1>
+      <p>Fabricantes internacionais selecionados com rigor. Clique em uma marca para ver detalhes e acessar o catálogo.</p>
+    </div>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="filters-bar" role="navigation" aria-label="Filtrar por categoria">
+    <div class="container" id="filters-container">
+      <button class="filter-btn is-active" data-filter="todos" type="button">Todos</button>
+      <!-- demais filtros injetados via JS -->
+    </div>
+  </div>
+
+  <!-- GRID PRINCIPAL -->
+  <main id="marcas-content" class="marcas-main">
+    <div class="container">
+      <p class="marcas-count" id="marcas-count" aria-live="polite"></p>
+
+      <div class="marcas-grid" id="marcas-grid" role="list" aria-label="Marcas">
+        <!-- Skeleton enquanto carrega -->
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="sk sk-logo-area"></div>
+          <div class="sk-body">
+            <div class="sk sk-line" style="width:42%"></div>
+            <div class="sk sk-title"></div>
+          </div>
+        </div>
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="sk sk-logo-area"></div>
+          <div class="sk-body">
+            <div class="sk sk-line" style="width:55%"></div>
+            <div class="sk sk-title"></div>
+          </div>
+        </div>
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="sk sk-logo-area"></div>
+          <div class="sk-body">
+            <div class="sk sk-line" style="width:38%"></div>
+            <div class="sk sk-title"></div>
+          </div>
+        </div>
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="sk sk-logo-area"></div>
+          <div class="sk-body">
+            <div class="sk sk-line" style="width:60%"></div>
+            <div class="sk sk-title"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brands-empty" id="brands-empty" role="status" aria-live="polite">
+        <i class="fa-solid fa-box-open" aria-hidden="true"></i>
+        <p>Nenhuma marca encontrada para esse filtro.</p>
+        <button type="button" id="empty-reset" style="margin-top:.75rem;background:none;border:none;color:var(--gold-dark);font-weight:600;font-size:.95rem;cursor:pointer;">
+          Ver todas as marcas
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div
+    class="modal-overlay"
+    id="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-name"
+    tabindex="-1"
+  >
+    <div class="modal" id="modal" role="document">
+      <div class="modal__head">
+        <div class="modal__logo" id="modal-logo" aria-hidden="true"></div>
+        <div class="modal__titles">
+          <p class="modal__cat" id="modal-cat"></p>
+          <h2 class="modal__name" id="modal-name"></h2>
+        </div>
+        <button class="modal__close" id="modal-close" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal__body">
+        <p class="modal__desc" id="modal-desc"></p>
+        <div class="modal__meta" id="modal-meta"></div>
+        <div id="modal-catalog"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h2>DEAL TRADING</h2>
+          <p>Importadora para o mercado B2B. Atacado nacional com foco em parceria e performance logística.</p>
+        </div>
+        <div>
+          <h2>Endereços</h2>
+          <p>Matriz: Itajaí · SC<br>Filial: Curitiba · PR</p>
+        </div>
+        <div>
+          <h2>Links</h2>
+          <p>
+            <a href="index.html#quem-somos">Quem somos</a> ·
+            <a href="index.html#valores">Valores</a> ·
+            <a href="marcas.html">Marcas</a> ·
+            <a href="index.html#contato">Contato</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> DEAL TRADING. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/assets/js/marcas.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

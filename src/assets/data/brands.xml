@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<brands>
+  <marca>
+    <nome>ARTRON</nome>
+    <categoria>Testes Diagnósticos</categoria>
+    <logo>artron.png</logo>
+    <descricao>Líder global em testes diagnósticos rápidos, com tecnologia de ponta para resultados precisos e confiáveis.</descricao>
+    <url>artron.com</url>
+    <catalogo>src/catalogos/artron.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>EARTHFOAM</nome>
+    <categoria>Espuma de Látex Natural</categoria>
+    <logo>earthfoam.png</logo>
+    <descricao>Espumas de látex natural de alta qualidade, produzidas com processos sustentáveis e matéria-prima certificada.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/earthfoam.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>Motos Elétricas</nome>
+    <categoria>Mobilidade Elétrica</categoria>
+    <logo>motoseletricas.png</logo>
+    <descricao>Linha completa de motos elétricas para mobilidade urbana eficiente, econômica e sustentável.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/motoseletricas.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>NOBHEX</nome>
+    <categoria>Pneus</categoria>
+    <logo>nobhex.png</logo>
+    <descricao>Pneus de alto desempenho com tecnologia de distribuição de carga, para veículos de passeio e utilitários.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/nobhex.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>FERENTINO</nome>
+    <categoria>Pneus</categoria>
+    <logo>ferentino.png</logo>
+    <descricao>Pneus de tradição europeia com foco em conforto e estabilidade em qualquer condição de pista.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/ferentino.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>NOVAMAXX</nome>
+    <categoria>Pneus</categoria>
+    <logo>novamaxx.png</logo>
+    <descricao>Pneus de alta durabilidade para veículos de passeio e carga, com excelente custo-benefício no atacado.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/novamaxx.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>AGATE</nome>
+    <categoria>Pneus</categoria>
+    <logo>agate.png</logo>
+    <descricao>Linha premium de pneus para SUVs e pickups, desenvolvida para máxima tração e segurança em qualquer terreno.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/agate.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>DOHVAN</nome>
+    <categoria>Pneus</categoria>
+    <logo>dohvan.png</logo>
+    <descricao>Pneus para veículos de carga pesada com composto especial de borracha para maior vida útil e economia.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/dohvan.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>MAQRODA</nome>
+    <categoria>Rodas Industriais</categoria>
+    <logo>maqroda.png</logo>
+    <descricao>Rodas industriais e rodízios de alta resistência para equipamentos de movimentação e armazenagem.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/maqroda.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>GREENTOUR</nome>
+    <categoria>Pneus</categoria>
+    <logo>greentour.png</logo>
+    <descricao>Pneus ecológicos com baixa resistência ao rolamento, reduzindo consumo de combustível e emissões de CO₂.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/greentour.pdf</catalogo>
+  </marca>
+  <marca>
+    <nome>EUROGRIP</nome>
+    <categoria>Pneus</categoria>
+    <logo>eurogrip.png</logo>
+    <descricao>Pneus com certificação Inmetro, alta performance em pista molhada e excelente frenagem em todas as condições.</descricao>
+    <url></url>
+    <catalogo>src/catalogos/eurogrip.pdf</catalogo>
+  </marca>
+</brands>
