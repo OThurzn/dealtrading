@@ -191,9 +191,13 @@
 
     .brand-card__logo-wrap.logo-placeholder {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 0.78rem;
       font-weight: 700;
+      line-height: 1.15;
+      text-align: center;
+      padding: 0.5rem;
       color: var(--gold-dark);
+      word-break: break-word;
     }
 
     .brand-card__body {
@@ -357,8 +361,16 @@
 
     .modal__logo.logo-placeholder {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 0.62rem;
       font-weight: 700;
+      line-height: 1.08;
+      text-align: center;
+      padding: 0.35rem;
+      color: var(--gold);
+      word-break: break-word;
+    }
+
+    .modal__logo.logo-placeholder--dark {
       color: var(--gold);
     }
 
@@ -470,6 +482,14 @@
     .modal__no-catalog a {
       color: var(--gold-dark);
       font-weight: 600;
+    }
+
+    .btn:disabled {
+      opacity: 0.42;
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none;
+      box-shadow: none;
     }
   </style>
 </head>
