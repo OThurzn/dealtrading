@@ -2,27 +2,6 @@
 
 <brands>
 
-  <!-- Marca completa: todos os campos preenchidos -->
-  <marca>
-    <nome>ARTRON</nome>
-    <categoria>Testes Diagnósticos</categoria>
-    <logo>artron.png</logo>
-    <descricao>Líder global em testes diagnósticos rápidos, com tecnologia de ponta para resultados precisos e confiáveis.</descricao>
-    <url>artron.com</url>
-    <catalogo>src/catalogos/artron.pdf</catalogo>
-  </marca>
-
-  <!-- Sem catálogo: tag presente mas vazia → botões desabilitados -->
-  <marca>
-    <nome>EARTHFOAM</nome>
-    <categoria>Espuma de Látex Natural</categoria>
-    <logo>earthfoam.png</logo>
-    <descricao>Espumas de látex natural de alta qualidade, produzidas com processos sustentáveis e matéria-prima certificada.</descricao>
-    <url></url>
-    <catalogo></catalogo>
-  </marca>
-
-  <!-- Sem tag catalogo: não tem a tag → mesmo comportamento de desabilitado -->
   <marca>
     <nome>Motos Elétricas</nome>
     <categoria>Mobilidade Elétrica</categoria>
@@ -31,26 +10,24 @@
     <url></url>
   </marca>
 
-  <!-- Sem logo: tag presente mas vazia → placeholder com inicial "N" -->
   <marca>
     <nome>NOBHEX</nome>
     <categoria>Pneus</categoria>
-    <logo></logo>
+    <logo>nobhex.png</logo>
     <descricao>Pneus de alto desempenho com tecnologia de distribuição de carga, para veículos de passeio e utilitários.</descricao>
     <url></url>
     <catalogo>src/catalogos/nobhex.pdf</catalogo>
   </marca>
 
-  <!-- Sem tag logo: não tem a tag → placeholder com inicial "F" -->
   <marca>
     <nome>FERENTINO</nome>
     <categoria>Pneus</categoria>
+    <logo>ferentino.png</logo>
     <descricao>Pneus de tradição europeia com foco em conforto e estabilidade em qualquer condição de pista.</descricao>
     <url></url>
     <catalogo>src/catalogos/ferentino.pdf</catalogo>
   </marca>
 
-  <!-- Sem descricao e sem url: campos simplesmente não exibidos no modal -->
   <marca>
     <nome>NOVAMAXX</nome>
     <categoria>Pneus</categoria>
@@ -60,7 +37,6 @@
     <catalogo>src/catalogos/novamaxx.pdf</catalogo>
   </marca>
 
-  <!-- Sem categoria: tag ausente → sem badge de categoria no card e no modal -->
   <marca>
     <nome>AGATE</nome>
     <logo>agate.png</logo>
@@ -68,7 +44,6 @@
     <catalogo>src/catalogos/agate.pdf</catalogo>
   </marca>
 
-  <!-- Completo -->
   <marca>
     <nome>DOHVAN</nome>
     <categoria>Pneus</categoria>
@@ -78,7 +53,6 @@
     <catalogo>src/catalogos/dohvan.pdf</catalogo>
   </marca>
 
-  <!-- Completo -->
   <marca>
     <nome>MAQRODA</nome>
     <categoria>Rodas Industriais</categoria>
@@ -88,7 +62,6 @@
     <catalogo>src/catalogos/maqroda.pdf</catalogo>
   </marca>
 
-  <!-- Completo -->
   <marca>
     <nome>GREENTOUR</nome>
     <categoria>Pneus</categoria>
@@ -98,7 +71,6 @@
     <catalogo>src/catalogos/greentour.pdf</catalogo>
   </marca>
 
-  <!-- Completo -->
   <marca>
     <nome>EUROGRIP</nome>
     <categoria>Pneus</categoria>

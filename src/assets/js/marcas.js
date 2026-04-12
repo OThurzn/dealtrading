@@ -51,17 +51,17 @@ async function loadBrandsFromXML() {
 
     if (grid) {
       grid.innerHTML = `
-        <div class="brands-empty brands-empty--visible" style="grid-column: 1 / -1; display: block;">
+        <div class="brands-empty brands-empty--visible">
           <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
           <p>Não foi possível carregar as marcas.</p>
-          <button type="button" id="empty-reset" style="margin-top:.75rem;background:none;border:none;color:var(--gold-dark);font-weight:600;font-size:.95rem;cursor:pointer;">
+          <button type="button" id="empty-reset" class="brands-empty__action">
             Tentar novamente
           </button>
         </div>
       `;
     }
 
-    if (emptyEl) emptyEl.style.display = 'none';
+    if (emptyEl) emptyEl.hidden = true;
     if (countEl) countEl.textContent = '';
   }
 }
@@ -153,12 +153,18 @@ function renderCards(marcas) {
   grid.innerHTML = '';
 
   if (!marcas.length) {
-    if (emptyEl) emptyEl.style.display = 'block';
+    if (emptyEl) {
+      emptyEl.hidden = false;
+      emptyEl.classList.add('brands-empty--visible');
+    }
     if (countEl) countEl.textContent = '';
     return;
   }
 
-  if (emptyEl) emptyEl.style.display = 'none';
+  if (emptyEl) {
+    emptyEl.hidden = true;
+    emptyEl.classList.remove('brands-empty--visible');
+  }
 
   if (countEl) {
     countEl.innerHTML = marcas.length === allMarcas.length
@@ -286,15 +292,15 @@ async function openModal(marca) {
 
   renderLogo(logoEl, marca.logo, marca.nome, true);
   catEl.textContent = marca.categoria || '';
-  catEl.style.display = marca.categoria ? '' : 'none';
+  catEl.hidden = !marca.categoria;
   nameEl.textContent = marca.nome;
 
   if (marca.descricao) {
     descEl.textContent = marca.descricao;
-    descEl.style.display = '';
+    descEl.hidden = false;
   } else {
     descEl.textContent = '';
-    descEl.style.display = 'none';
+    descEl.hidden = true;
   }
 
   metaEl.innerHTML = '';
@@ -309,7 +315,7 @@ async function openModal(marca) {
     link.textContent = marca.url;
     metaEl.appendChild(createMetaItem('Site oficial', link));
   }
-  metaEl.style.display = metaEl.children.length ? 'flex' : 'none';
+  metaEl.hidden = !metaEl.children.length;
 
   renderCatalogActions(catalogEl, false);
   overlay.classList.add('is-open');

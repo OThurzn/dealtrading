@@ -18,146 +18,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="src/assets/css/styles.css">
-  <style>
-    /* ===== SEÇÃO MARCAS (index) ===== */
-    .marcas-cta-section {
-      padding: clamp(3.5rem, 8vw, 5.5rem) 0;
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .marcas-cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 55% 90% at 95% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .marcas-cta-section .container {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-
-    @media (min-width: 720px) {
-      .marcas-cta-section .container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 3rem;
-      }
-    }
-
-    .marcas-cta__content {
-      flex: 1;
-    }
-
-    .marcas-cta__eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin: 0 0 0.6rem;
-    }
-
-    .marcas-cta__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.85rem;
-    }
-
-    .marcas-cta__desc {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.6);
-      max-width: 46ch;
-      margin: 0;
-      line-height: 1.65;
-    }
-
-    .marcas-cta__logos {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .marcas-cta__logo-pill {
-      height: 36px;
-      padding: 0 0.85rem;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .marcas-cta__logo-pill img {
-      height: 20px;
-      width: auto;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.65;
-    }
-
-    .marcas-cta__logo-pill span {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: rgba(255, 255, 255, 0.65);
-      text-transform: uppercase;
-    }
-
-    .marcas-cta__more {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.4);
-      align-self: center;
-      white-space: nowrap;
-    }
-
-    .marcas-cta__action {
-      flex-shrink: 0;
-    }
-
-    .marcas-cta__btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.85rem 1.75rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: var(--ink);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(184, 134, 11, 0.4);
-      transition: filter var(--transition), transform var(--transition);
-      white-space: nowrap;
-    }
-
-    .marcas-cta__btn:hover {
-      filter: brightness(1.06);
-      transform: translateY(-2px);
-      color: var(--ink);
-    }
-
-    .marcas-cta__btn i {
-      font-size: 0.9rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -174,8 +34,9 @@
 
       <nav class="nav" aria-label="Principal">
         <a href="#quem-somos">Quem somos</a>
-        <a href="#valores">Valores</a>
         <a href="marcas.html">Marcas</a>
+        <a href="#valores">Valores</a>
+        <a href="#galeria">Galeria</a>
         <a href="#contato" class="btn btn--primary">Contato</a>
       </nav>
 
@@ -188,40 +49,47 @@
     </div>
     <nav id="menu-mobile" class="nav-mobile" aria-label="Mobile">
       <a href="#quem-somos">Quem somos</a>
-      <a href="#valores">Valores</a>
       <a href="marcas.html">Marcas</a>
+      <a href="#valores">Valores</a>
+      <a href="#galeria">Galeria</a>
       <a href="#contato" class="btn btn--primary btn--block">Contato</a>
     </nav>
   </header>
 
   <main id="conteudo-principal">
-    <section id="inicio" class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=2071&auto=format&fit=crop" alt=""
-          width="2071" height="1381" fetchpriority="high">
-        <div class="hero__overlay"></div>
+
+    <section id="inicio" class="intro-video" aria-labelledby="video-inicio-title">
+      <div class="intro-video__media" aria-hidden="true">
+        <video class="intro-video__player" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=2071&auto=format&fit=crop">
+          <source src="src/media/deal-apresentacao.webm" type="video/webm">
+          <source src="src/media/deal-apresentacao.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+        <div class="intro-video__veil"></div>
       </div>
-      <div class="container">
-        <p class="hero__label">Importação · Atacado · B2B</p>
-        <h1 id="hero-title">Pneus e performance para quem move o Brasil</h1>
-        <p class="hero__lead">
-          Somos uma importadora focada em relacionamentos de longo prazo com revendedores e frotistas.
-          Estrutura enxuta, giro rápido e preços competitivos em todo o território nacional.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#contato">Fale com a equipe comercial</a>
-          <a class="btn btn--ghost btn--on-hero" href="#quem-somos">Conheça a DEAL</a>
+      <div class="intro-video__overlay">
+        <div class="container intro-video__content">
+          <p class="intro-video__eyebrow">Importação · Atacado · B2B</p>
+          <h1 id="video-inicio-title" class="intro-video__title">Pneus e performance para quem move o Brasil</h1>
+          <p class="intro-video__lead">
+            Somos uma importadora focada em relacionamentos de longo prazo com distribuidores, revendedores e frotistas.
+            Estrutura enxuta, giro rápido e preços competitivos em todo o território nacional.
+          </p>
+          <div class="intro-video__actions">
+            <a class="btn btn--primary" href="#contato">Fale com a equipe comercial</a>
+            <a class="btn btn--ghost btn--on-hero" href="#quem-somos">Conheça a DEAL</a>
+          </div>
+          <dl class="hero__meta">
+            <div>
+              <dt>Matriz</dt>
+              <dd>Itajaí · SC</dd>
+            </div>
+            <div>
+              <dt>Filial</dt>
+              <dd>Curitiba · PR</dd>
+            </div>
+          </dl>
         </div>
-        <dl class="hero__meta">
-          <div>
-            <dt>Matriz</dt>
-            <dd>Itajaí · SC</dd>
-          </div>
-          <div>
-            <dt>Filial</dt>
-            <dd>Curitiba · PR</dd>
-          </div>
-        </dl>
       </div>
     </section>
 
@@ -231,25 +99,19 @@
           <p class="section__eyebrow">Institucional</p>
           <h2 id="quem-somos-title" class="section__title">Quem somos</h2>
           <p class="section__desc">
-            A DEAL é a parceira ideal para o comerciante de pneus e também para o frotista que busca eficiência e
-            confiança. Nosso foco está na construção de relacionamentos sólidos e de longo prazo, garantindo um
-            fornecimento contínuo no atacado em todo o Brasil, com uma seleção completa de pneus para veículos de
-            passeio, caminhonetes e linha de carga.
+            A DEAL é a parceira ideal para o comerciante de pneus e também para o frotista que busca eficiência e confiança. Nosso foco está na construção de relacionamentos sólidos e de longo prazo, garantindo um fornecimento contínuo no atacado em todo o Brasil, com uma seleção completa de pneus para veículos de passeio, caminhonetes e linha de carga e agrícola.
           </p>
         </header>
         <div class="split">
           <figure class="split__figure">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+            <img src="src\imgs\illustrations\estoque.png"
               alt="Operação logística em armazém" width="2070" height="1380" loading="lazy">
             <figcaption class="split__badge">Logística integrada do pedido à entrega — com transparência em cada etapa.
             </figcaption>
           </figure>
           <div class="split__text">
             <p>
-              Contamos com uma estrutura enxuta, aliada a uma operação altamente eficiente e logística ágil, o que
-              assegura um giro rápido de estoque e maior competitividade. Isso nos permite oferecer preços de atacado
-              realmente diferenciados, capazes de surpreender e gerar valor para o seu negócio. Entre em contato e
-              descubra na prática como podemos impulsionar seus resultados.
+              Entregamos uma expertise que só se adquire com muita experiência, que nossa equipe tem de sobra. Nossa estrutura enxuta e atenção a cada detalhe da operação permitem giro rápido e preços competitivos. Viajamos o mundo para negociar as melhores marcas e preços. Contamos com parceiros estratégicos internacionais com poder de negociação nas fábricas. Entre em contato e descubra na prática como podemos impulsionar seus resultados.
             </p>
             <div class="stats" role="list">
               <div class="stat" role="listitem">
@@ -266,7 +128,6 @@
       </div>
     </section>
 
-    <!-- SEÇÃO MARCAS E CATÁLOGOS — um único bloco -->
     <section id="parceiro" class="marcas-cta-section" aria-labelledby="marcas-cta-title">
       <div class="container">
         <div class="marcas-cta__content">
@@ -277,8 +138,7 @@
             de produtos e explore cada marca em detalhe.
           </p>
           <div class="marcas-cta__logos" aria-hidden="true" id="marcas-preview-logos">
-            <!-- Logos carregadas dinamicamente pelo main.js -->
-          </div>
+            </div>
         </div>
         <div class="marcas-cta__action">
           <a href="marcas.html" class="marcas-cta__btn">
@@ -288,6 +148,7 @@
         </div>
       </div>
     </section>
+
 
     <section id="valores" class="section" aria-labelledby="valores-title">
       <div class="container">
@@ -300,28 +161,57 @@
           </p>
         </header>
 
-        <div class="values" role="list" aria-label="Valores da DEAL TRADING">
-          <article class="value-card" role="listitem">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
-            <h3>Parceria</h3>
-            <p>Relacionamentos duradouros, contratos claros e suporte comercial que acompanha o ritmo do seu negócio
-            </p>
-          </article>
-          <article class="value-card" role="listitem">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Curadoria de marcas para um portfólio completo</h3>
-            <p>Viajamos o mundo para disponibilizar um sortimento completo de marcas e medidas</p>
-          </article>
-          <article class="value-card" role="listitem">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-            <h3>Eficiência</h3>
-            <p>Processos enxutos e giro rápido que permitem preços competitivos para crescer junto com os parceiros</p>
-          </article>        
+        <div class="values-layout">
+          <figure class="values-visual">
+            <img src="src/imgs/illustrations/estrutura-operacional.png" alt="Fluxo operacional da DEAL" width="1240" height="1240" loading="lazy" decoding="async">
+          </figure>
+
+          <div class="values-block">
+            <div class="values" role="list" aria-label="Valores da DEAL TRADING">
+              <article class="value-card" role="listitem">
+                <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Parceria</h3>
+                <p>Relacionamentos duradouros, contratos claros e suporte comercial que acompanha o ritmo do seu negócio</p>
+              </article>
+              <article class="value-card" role="listitem">
+                <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Curadoria de marcas para um portfólio completo</h3>
+                <p>Viajamos o mundo para disponibilizar um sortimento completo de marcas e medidas</p>
+              </article>
+              <article class="value-card" role="listitem">
+                <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Eficiência</h3>
+                <p>Processos enxutos e giro rápido que permitem preços competitivos para crescer junto com os parceiros</p>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
-      <img src="src/imgs/estrutura.png">
     </section>
 
+    <section id="galeria" class="team-gallery section section--alt" aria-labelledby="team-gallery-title">
+      <div class="container">
+        <header class="section__head team-gallery__head">
+          <p class="section__eyebrow">Equipe em campo</p>
+          <h2 id="team-gallery-title" class="section__title">Eventos importantes</h2>
+                  </header>
+
+        <div class="team-carousel" data-team-carousel>
+          <button class="team-carousel__btn team-carousel__btn--prev" type="button" aria-label="Ver imagem anterior">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="team-carousel__viewport" tabindex="0" aria-label="Carrossel de fotos da equipe">
+            <div class="team-carousel__track"></div>
+          </div>
+
+          <button class="team-carousel__btn team-carousel__btn--next" type="button" aria-label="Ver próxima imagem">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+              </div>
+    </section>
     <section id="contato" class="section" aria-labelledby="contato-title">
       <div class="container">
         <header class="section__head">
@@ -335,25 +225,25 @@
           <div class="contact-info">
             <div class="contact-block">
               <h3>Matriz — Itajaí (SC)</h3>
-              <p>Rua Exemplo, 123 — Galpão 01<br>Bairro Industrial — Itajaí/SC<br>CEP 88300-000 · <a
-                  href="tel:+554700000000">(47) 0000-0000</a></p>
+              <p>Rua Dr. Pedro Ferreira, 333 — Sala 1206<br>Centro — Itajaí/SC<br>CEP 88.301-030 · <a
+                  href="tel:+555581285982">(55) 8128-5982</a></p>
             </div>
             <div class="contact-block">
               <h3>Filial — Curitiba (PR)</h3>
-              <p>Av. das Araucárias, 456<br>Polo Comercial — Curitiba/PR<br>CEP 80000-000 · <a
-                  href="tel:+554100000000">(41) 0000-0000</a></p>
+              <p>Av. Marechal Floriano Peixoto, 885 — Conj. 210<br>Centro — Curitiba/PR<br>CEP 80.010-130 · <a
+                  href="tel:+554181285982">(41) 8128-5982</a></p>
             </div>
           </div>
           <div class="contact-actions">
             <div class="contact-block">
               <h3>Atendimento rápido</h3>
               <p>Clique no canal de sua preferência para falar diretamente com nossa equipe comercial.</p>
-              <div class="action-buttons" style="margin-top: 1.25rem;">
-                <a href="https://wa.me/554700000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DEAL%20TRADING%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20no%20atacado."
-                  class="btn btn--ghost btn--block" style="color: #fff; background-color: green;" target="_blank"
+              <div class="action-buttons contact-actions__buttons">
+                <a href="https://wa.me/555581285982?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DEAL%20TRADING%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20no%20atacado."
+                  class="btn btn--ghost btn--block btn--whatsapp" target="_blank"
                   rel="noopener noreferrer">Abrir WhatsApp</a>
-                <a href="mailto:contato@dealtrading.com.br?subject=Cota%C3%A7%C3%A3o%20%E2%80%94%20DEAL%20TRADING%20(Atacado)&body=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DEAL%20TRADING%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20no%20atacado."
-                  class="btn btn--primary btn--block" style="color: black;">Abrir e-mail</a>
+                <a href="mailto:dealtrading.brz@gmail.com?subject=Cota%C3%A7%C3%A3o%20%E2%80%94%20DEAL%20TRADING%20(Atacado)&body=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DEAL%20TRADING%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20no%20atacado."
+                  class="btn btn--primary btn--block btn--mail">Abrir e-mail</a>
 
               </div>
             </div>
@@ -372,13 +262,19 @@
         </div>
         <div>
           <h2>Endereços</h2>
-          <p>Matriz: Itajaí · SC<br>Filial: Curitiba · PR</p>
+          <p>
+            <strong>Matriz:</strong> Itajaí · SC<br>
+            R. Dr. Pedro Ferreira, 333 - Sl 1206<br>
+            <strong>Filial:</strong> Curitiba · PR<br>
+            Av. Mal. Floriano Peixoto, 885 - Cj 210
+          </p>
         </div>
         <div>
           <h2>Links</h2>
           <p>
             <a href="#quem-somos">Quem somos</a> ·
             <a href="#valores">Valores</a> ·
+            <a href="#galeria">Galeria</a> ·
             <a href="marcas.html">Marcas</a> ·
             <a href="#contato">Contato</a>
           </p>
