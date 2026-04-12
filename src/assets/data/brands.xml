@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- 
+<marca>
+  <nome></nome>
+  <categoria></categoria>
+  <logo></logo>
+  <descricao></descricao>
+  <url></url>
+  <catalogo></catalogo>
+</marca>
+ -->
+
 <brands>
 
   <marca>
     <nome>Motos Elétricas</nome>
     <categoria>Mobilidade Elétrica</categoria>
     <logo>motoseletricas.png</logo>
-    <descricao>Linha completa de motos elétricas para mobilidade urbana eficiente, econômica e sustentável.</descricao>
+    <descricao></descricao>
     <url></url>
+    <catalogo></catalogo>
   </marca>
 
   <marca>
     <nome>NOBHEX</nome>
     <categoria>Pneus</categoria>
     <logo>nobhex.png</logo>
-    <descricao>Pneus de alto desempenho com tecnologia de distribuição de carga, para veículos de passeio e utilitários.</descricao>
+    <descricao></descricao>
     <url></url>
     <catalogo>src/catalogos/nobhex.pdf</catalogo>
   </marca>
@@ -23,7 +35,7 @@
     <nome>FERENTINO</nome>
     <categoria>Pneus</categoria>
     <logo>ferentino.png</logo>
-    <descricao>Pneus de tradição europeia com foco em conforto e estabilidade em qualquer condição de pista.</descricao>
+    <descricao></descricao>
     <url></url>
     <catalogo>src/catalogos/ferentino.pdf</catalogo>
   </marca>
@@ -39,8 +51,10 @@
 
   <marca>
     <nome>AGATE</nome>
+    <categoria>Pneus</categoria>
     <logo>agate.png</logo>
-    <descricao>Linha premium de pneus para SUVs e pickups, desenvolvida para máxima tração e segurança em qualquer terreno.</descricao>
+    <descricao></descricao>
+    <url></url>
     <catalogo>src/catalogos/agate.pdf</catalogo>
   </marca>
 
@@ -48,7 +62,7 @@
     <nome>DOHVAN</nome>
     <categoria>Pneus</categoria>
     <logo>dohvan.png</logo>
-    <descricao>Pneus para veículos de carga pesada com composto especial de borracha para maior vida útil e economia.</descricao>
+    <descricao></descricao>
     <url></url>
     <catalogo>src/catalogos/dohvan.pdf</catalogo>
   </marca>
@@ -57,7 +71,7 @@
     <nome>MAQRODA</nome>
     <categoria>Rodas Industriais</categoria>
     <logo>maqroda.png</logo>
-    <descricao>Rodas industriais e rodízios de alta resistência para equipamentos de movimentação e armazenagem.</descricao>
+    <descricao></descricao>
     <url></url>
     <catalogo>src/catalogos/maqroda.pdf</catalogo>
   </marca>
@@ -66,7 +80,7 @@
     <nome>GREENTOUR</nome>
     <categoria>Pneus</categoria>
     <logo>greentour.png</logo>
-    <descricao>Pneus ecológicos com baixa resistência ao rolamento, reduzindo consumo de combustível e emissões de CO₂.</descricao>
+    <descricao></descricao>
     <url></url>
     <catalogo>src/catalogos/greentour.pdf</catalogo>
   </marca>
@@ -75,7 +89,7 @@
     <nome>EUROGRIP</nome>
     <categoria>Pneus</categoria>
     <logo>eurogrip.png</logo>
-    <descricao>Pneus com certificação Inmetro, alta performance em pista molhada e excelente frenagem em todas as condições.</descricao>
+    <descricao></descricao>
     <url></url>
     <catalogo>src/catalogos/eurogrip.pdf</catalogo>
   </marca>
