@@ -8,8 +8,7 @@
     content="DEAL TRADING — Marcas parceiras. Conheça os fabricantes internacionais que distribuímos no Brasil.">
   <meta name="theme-color" content="#0d0d0d">
   <title>Marcas | DEAL TRADING</title>
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d4af37'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='system-ui' font-size='14' font-weight='700' fill='%230d0d0d'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image" href="src\imgs\logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -18,43 +17,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="src/assets/css/styles.css">
+  <script src="src/assets/js/layout.js" defer></script>
 </head>
 
 <body>
-  <a class="skip-link" href="#marcas-content">Ir para o conteúdo</a>
-
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="logo" href="index.html" aria-label="DEAL TRADING — início">
-        <img class="logo__mark" src="src/imgs/logo.png" alt="DEAL TRADING" height="52">
-        <span class="logo__text">
-          <span class="logo__name">Deal Trading</span>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html#quem-somos">Quem somos</a>
-        <a href="marcas.html" aria-current="page">Marcas</a>
-        <a href="index.html#valores">Valores</a>
-        <a href="index.html#galeria">Galeria</a>
-        <a href="index.html#contato" class="btn btn--primary">Contato</a>
-      </nav>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile"
-        aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <nav id="menu-mobile" class="nav-mobile" aria-label="Mobile">
-      <a href="index.html#quem-somos">Quem somos</a>
-      <a href="marcas.html">Marcas</a>
-      <a href="index.html#valores">Valores</a>
-      <a href="index.html#galeria">Galeria</a>
-      <a href="index.html#contato" class="btn btn--primary btn--block">Contato</a>
-    </nav>
-  </header>
+  <div id="site-header-mount"></div>
 
   <main id="marcas-content">
     <div class="page-hero">
@@ -66,15 +33,15 @@
         </nav>
         <p class="page-hero__eyebrow">Portfólio</p>
         <h1>Nossas Marcas</h1>
-        <p>Fabricantes internacionais selecionados com rigor. Clique em uma marca para ver detalhes e acessar o catálogo.
-        </p>
+        <p>Fabricantes internacionais selecionados com rigor. Clique em uma marca para ver detalhes e acessar o
+          catálogo.</p>
       </div>
     </div>
 
     <div class="filters-bar" role="navigation" aria-label="Filtrar por categoria">
       <div class="container" id="filters-container">
         <button class="filter-btn is-active" data-filter="todos" type="button">Todos</button>
-        </div>
+      </div>
     </div>
 
     <section class="marcas-main">
@@ -125,46 +92,14 @@
       <div class="modal__body">
         <p class="modal__desc" id="modal-desc"></p>
         <div class="modal__meta" id="modal-meta"></div>
-        <div id="modal-catalog"></div>
+        <div id="modal-files"></div>
       </div>
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="site-footer__grid">
-        <div>
-          <h2>DEAL TRADING</h2>
-          <p>Importadora para o mercado B2B. Atacado nacional com foco em parceria e performance logística.</p>
-        </div>
-        <div>
-          <h2>Endereços</h2>
-          <p>
-            <strong>Matriz:</strong> Itajaí · SC<br>
-            R. Dr. Pedro Ferreira, 333 - Sl 1206<br>
-            <strong>Filial:</strong> Curitiba · PR<br>
-            Av. Mal. Floriano Peixoto, 885 - Cj 210
-          </p>
-        </div>
-        <div>
-          <h2>Links</h2>
-          <p>
-            <a href="index.html#quem-somos">Quem somos</a> ·
-            <a href="index.html#valores">Valores</a> ·
-            <a href="index.html#galeria">Galeria</a> ·
-            <a href="marcas.html">Marcas</a> ·
-            <a href="index.html#contato">Contato</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> DEAL TRADING. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer-mount"></div>
 
   <script src="src/assets/js/marcas.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

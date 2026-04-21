@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
-<marca>
-  <nome></nome>
-  <categoria></categoria>
-  <logo></logo>
-  <descricao></descricao>
-  <url></url>
-  <catalogo></catalogo>
-</marca>
- -->
+<!--
+  ============================================================
+  DEAL TRADING — brands.xml
+  ============================================================
+
+  ESTRUTURA DE CADA <marca>:
+  ─────────────────────────
+  <nome>        (obrigatório) Nome da marca
+  <categoria>   (opcional)   Segmento / categoria para filtro
+  <logo>        (opcional)   Arquivo de logo em src/imgs/logos/
+  <descricao>   (opcional)   Texto descritivo exibido no modal
+  <url>         (opcional)   Site oficial da marca
+
+  <arquivos>    (opcional)   Container de mídias da marca
+    <arquivo>
+      <tipo>    pdf | video | imagem | link  </tipo>
+      <label>   Rótulo exibido ao usuário (ex: "Catálogo 2024") </label>
+      <nome>    Só o nome do arquivo (ex: NOBHEX.pdf)
+                O JS monta o caminho: src/arquivos/NOME-DA-MARCA/arquivo
+                Para tipo "link", coloque a URL completa aqui.
+      </nome>
+    </arquivo>
+  </arquivos>
+
+  REGRAS:
+  ───────
+  • A pasta da marca é gerada automaticamente a partir do <nome> da marca
+    (uppercase, espaços → hífen). Ex: "Porto Tyres" → src/arquivos/PORTO-TYRES/
+  • Não coloque caminhos completos — apenas o nome do arquivo.
+  • Tipo "link" é exceção: coloque a URL completa em <nome>.
+  • Arquivos ausentes ou caminhos inválidos não quebram o sistema.
+
+  TIPOS SUPORTADOS:
+  ─────────────────
+  pdf    → botões "Visualizar" (nova aba) + "Baixar"
+  video  → player inline no modal  (.mp4 / .webm)
+  imagem → visualizador inline no modal
+  link   → botão "Acessar" abrindo URL externa
+  ============================================================
+-->
 
 <brands>
 
@@ -19,7 +49,8 @@
     <logo>motoseletricas.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo></catalogo>
+    <arquivos>
+    </arquivos>
   </marca>
 
   <marca>
@@ -28,7 +59,13 @@
     <logo>nobhex.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/nobhex.pdf</catalogo>
+    <arquivos>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>Catálogo Completo</label>
+        <nome>NOBHEX.pdf</nome>
+      </arquivo>
+    </arquivos>
   </marca>
 
   <marca>
@@ -37,7 +74,8 @@
     <logo>ferentino.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/ferentino.pdf</catalogo>
+    <arquivos>
+    </arquivos>
   </marca>
 
   <marca>
@@ -46,7 +84,13 @@
     <logo>novamaxx.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/novamaxx.pdf</catalogo>
+    <arquivos>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>Catálogo Completo</label>
+        <nome>NOVAMAXX.pdf</nome>
+      </arquivo>
+    </arquivos>
   </marca>
 
   <marca>
@@ -55,7 +99,28 @@
     <logo>agate.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/agate.pdf</catalogo>
+    <arquivos>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>PCR Light Weight</label>
+        <nome>AGATE-PCR-LIGHT-WEIGHT.pdf</nome>
+      </arquivo>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>PCR</label>
+        <nome>AGATE-PCR.pdf</nome>
+      </arquivo>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>TBR</label>
+        <nome>AGATE-TBR.pdf</nome>
+      </arquivo>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>TBR COFO</label>
+        <nome>AGATE-TBR-COFO.pdf</nome>
+      </arquivo>
+    </arquivos>
   </marca>
 
   <marca>
@@ -64,7 +129,8 @@
     <logo>dohvan.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/dohvan.pdf</catalogo>
+    <arquivos>
+    </arquivos>
   </marca>
 
   <marca>
@@ -73,7 +139,8 @@
     <logo>maqroda.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/maqroda.pdf</catalogo>
+    <arquivos>
+    </arquivos>
   </marca>
 
   <marca>
@@ -82,7 +149,13 @@
     <logo>greentour.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/greentour.pdf</catalogo>
+    <arquivos>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>Catálogo Completo</label>
+        <nome>GREENTOUR.pdf</nome>
+      </arquivo>
+    </arquivos>
   </marca>
 
   <marca>
@@ -91,7 +164,18 @@
     <logo>eurogrip.png</logo>
     <descricao></descricao>
     <url></url>
-    <catalogo>src/catalogos/eurogrip.pdf</catalogo>
+    <arquivos>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>Catálogo Interativo</label>
+        <nome>EUROGRIP-INTERACTIVE.pdf</nome>
+      </arquivo>
+      <arquivo>
+        <tipo>pdf</tipo>
+        <label>Catálogo Completo</label>
+        <nome>EUROGRIP.pdf</nome>
+      </arquivo>
+    </arquivos>
   </marca>
 
 </brands>

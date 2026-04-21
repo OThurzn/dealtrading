@@ -8,8 +8,7 @@
     content="DEAL TRADING — importadora especializada em pneus e soluções B2B. Atacado nacional, logística eficiente e parceria de longo prazo. Matriz em Itajaí (SC).">
   <meta name="theme-color" content="#0d0d0d">
   <title>DEAL TRADING | Importadora</title>
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d4af37'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='system-ui' font-size='14' font-weight='700' fill='%230d0d0d'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image" href="src\imgs\logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -18,50 +17,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="src/assets/css/styles.css">
+  <script src="src/assets/js/layout.js" defer></script>
 </head>
 
 <body>
-  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
-
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="logo" href="#inicio" aria-label="DEAL TRADING — início">
-        <img class="logo__mark" src="src/imgs/logo.png" alt="DEAL TRADING" height="52">
-        <span class="logo__text">
-          <span class="logo__name">Deal Trading</span>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Principal">
-        <a href="#quem-somos">Quem somos</a>
-        <a href="marcas.html">Marcas</a>
-        <a href="#valores">Valores</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#contato" class="btn btn--primary">Contato</a>
-      </nav>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile"
-        aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <nav id="menu-mobile" class="nav-mobile" aria-label="Mobile">
-      <a href="#quem-somos">Quem somos</a>
-      <a href="marcas.html">Marcas</a>
-      <a href="#valores">Valores</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contato" class="btn btn--primary btn--block">Contato</a>
-    </nav>
-  </header>
+  <div id="site-header-mount"></div>
 
   <main id="conteudo-principal">
 
     <section id="inicio" class="intro-video" aria-labelledby="video-inicio-title">
       <div class="intro-video__media" aria-hidden="true">
         <video class="intro-video__player" autoplay muted loop playsinline preload="auto"
-          poster="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=2071&auto=format&fit=crop">
+          poster="src\media\deal-apresentacao-poster.jpg">
           <source src="src/media/deal-apresentacao.webm" type="video/webm">
           <source src="src/media/deal-apresentacao.mp4" type="video/mp4">
           Seu navegador não suporta vídeo HTML5.
@@ -108,7 +75,7 @@
         </header>
         <div class="split">
           <figure class="split__figure">
-            <img src="src\imgs\illustrations\estoque.png" alt="Operação logística em armazém" width="2070" height="1380"
+            <img src="src/imgs/illustrations/estoque.png" alt="Operação logística em armazém" width="2070" height="1380"
               loading="lazy">
             <figcaption class="split__badge">Logística integrada do pedido à entrega — com transparência em cada etapa.
             </figcaption>
@@ -144,8 +111,6 @@
             Trabalhamos com fabricantes internacionais selecionados. Conheça o portfólio completo, acesse os catálogos
             de produtos e explore cada marca em detalhe.
           </p>
-          <div class="marcas-cta__logos" aria-hidden="true" id="marcas-preview-logos">
-          </div>
         </div>
         <div class="marcas-cta__action">
           <a href="marcas.html" class="marcas-cta__btn">
@@ -155,7 +120,6 @@
         </div>
       </div>
     </section>
-
 
     <section id="valores" class="section" aria-labelledby="valores-title">
       <div class="container">
@@ -210,11 +174,9 @@
           <button class="team-carousel__btn team-carousel__btn--prev" type="button" aria-label="Ver imagem anterior">
             <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           </button>
-
           <div class="team-carousel__viewport" tabindex="0" aria-label="Carrossel de fotos da equipe">
             <div class="team-carousel__track"></div>
           </div>
-
           <button class="team-carousel__btn team-carousel__btn--next" type="button" aria-label="Ver próxima imagem">
             <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
           </button>
@@ -222,6 +184,7 @@
 
       </div>
     </section>
+
     <section id="contato" class="section" aria-labelledby="contato-title">
       <div class="container">
         <header class="section__head">
@@ -254,50 +217,18 @@
                   WhatsApp</a>
                 <a href="mailto:dealtrading.brz@gmail.com?subject=Cota%C3%A7%C3%A3o%20%E2%80%94%20DEAL%20TRADING%20(Atacado)&body=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DEAL%20TRADING%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20no%20atacado."
                   class="btn btn--primary btn--block btn--mail">Abrir e-mail</a>
-
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="site-footer__grid">
-        <div>
-          <h2>DEAL TRADING</h2>
-          <p>Importadora para o mercado B2B. Atacado nacional com foco em parceria e performance logística.</p>
-        </div>
-        <div>
-          <h2>Endereços</h2>
-          <p>
-            <strong>Matriz:</strong> Itajaí · SC<br>
-            R. Dr. Pedro Ferreira, 333 - Sl 1206<br>
-            <strong>Filial:</strong> Curitiba · PR<br>
-            Av. Mal. Floriano Peixoto, 885 - Cj 210
-          </p>
-        </div>
-        <div>
-          <h2>Links</h2>
-          <p>
-            <a href="#quem-somos">Quem somos</a> ·
-            <a href="#valores">Valores</a> ·
-            <a href="#galeria">Galeria</a> ·
-            <a href="marcas.html">Marcas</a> ·
-            <a href="#contato">Contato</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> DEAL TRADING. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer-mount"></div>
 
   <script src="src/assets/js/main.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
